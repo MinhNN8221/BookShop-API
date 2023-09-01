@@ -127,8 +127,7 @@ var CustomerController = function () {
               case 25:
                 _context.prev = 25;
                 _context.t0 = _context['catch'](1);
-
-                res.status(500).json({ error: 'Internal Server Error' });
+                res.status(500).json({ error: 'Internal Server Error'+_context.t0 });
 
               case 28:
               case 'end':
