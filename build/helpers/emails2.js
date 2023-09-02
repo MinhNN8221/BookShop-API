@@ -3,11 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
 var _mail = require('@sendgrid/mail');
-
 var _mail2 = _interopRequireDefault(_mail);
-
 require('dotenv/config');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -15,6 +12,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 _mail2.default.setApiKey(process.env.SENDGRID_API_KEY);
+
+//nodemailer
+const nodemailer = require('nodemailer');
+const transporter = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+    user: 'itptit104@gmail.com', // Địa chỉ email của bạn
+    pass: 'gylfstpwksunfgla' // Mật khẩu của bạn
+  }
+});
+//nodemailer
 
 var sendNewPassword = function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(email, newPass) {
@@ -26,11 +34,12 @@ var sendNewPassword = function () {
             msg = {
               to: '' + email,
               from: 'anhshop@yopmail.com',
-              subject: 'Mật khẩu mới trên hệ thống AnhShop',
+              subject: 'Mật khẩu mới trên hệ thống BookShop',
               html: '<p>M\u1EADt kh\u1EA9u m\u1EDBi c\u1EE7a b\u1EA1n l\xE0: ' + newPass + '</p>'
             };
             _context.next = 3;
-            return _mail2.default.send(msg);
+            // return _mail2.default.send(msg);
+            return transporter.sendMail(msg);
 
           case 3:
           case 'end':
