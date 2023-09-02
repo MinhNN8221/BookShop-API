@@ -29,16 +29,17 @@ const transporter = nodemailer.createTransport({
 var orderEmail = function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(user, details) {
     var msg;
+    console.log("User:", user);
+  console.log("Details:", details);
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             msg = {
               to: `${user.email}`,
-              // to:'itptit101@gmail.com',
               from: 'itptit104@gmail.com',
               subject: 'Đơn hàng của bạn đã được đặt thành công',
-              html: '<strong>Xin ch\u00e0o: <em> '+ user.name +'</em>, c\u1EA3m \u01A1n b\u1EA1n v\xEC \u0111\xE3 \u0111\u1EB7t h\xE0ng</strong>\n    <p>Sau \u0111\xE2y l\xE0 th\xF4ng tin chi ti\u1EBFt c\u1EE7a \u0111\u01A1n h\xE0ng</p>\n    <p>S\u1ED1 l\u01B0\u1EE3ng : ' + details[0].total_amount + '</p>\n    <p>Ph\u01B0\u01A1ng th\u1EE9c giao h\xE0ng : ' + details[0].shipping_type + '</p>\n    <p>Ph\xED giao h\xE0ng : ' + details[0].shipping_cost + '</p>\n    <p>Lo\u1EA1i thu\u1EBF : ' + details[0].tax_type + '</p>\n    <p>Ph\u1EA7n tr\u0103m thu\u1EBF : ' + details[0].tax_percentage + '</p>\n    <p>Tr\u00e2n tr\u1ecdng,</p>\n    <p>\u0110\u1ed9i ng\u0169 BookShop</p>'
+              html: '<strong>Xin ch\u00e0o: <em> '+ user.name +'</em>, c\u1EA3m \u01A1n b\u1EA1n v\xEC \u0111\xE3 \u0111\u1EB7t h\xE0ng</strong>\n    <p>Sau \u0111\xE2y l\xE0 th\xF4ng tin chi ti\u1EBFt c\u1EE7a \u0111\u01A1n h\xE0ng</p>\n    <p>T\u00ean ng\u01b0\u1eddi nh\u1eadn h\u00e0ng : ' + details[0].receiver_name + '</p>\n    <p>S\u1ed1 \u0111i\u1ec7n tho\u1ea1i ng\u01b0\u1eddi nh\u1eadn : ' + details[0].receiver_phone + '</p>\n    <p>\u0110\u1ecba ch\u1ec9 ng\u01b0\u1eddi nh\u1eadn : ' + details[0].address + '</p>\n    <p>S\u1ED1 l\u01B0\u1EE3ng : ' + details[0].products.length + '</p>\n    <p>Ph\u01B0\u01A1ng th\u1EE9c giao h\xE0ng : ' + details[0].shipping_type + '</p>\n    <p>Ph\xED giao h\xE0ng : ' + details[0].shipping_cost + '</p>\n    <p>T\u1ed5ng ti\u1ec1n ph\u1ea3i tr\u1ea3 : ' + details[0].order_total + '</p>\n    <p>Tr\u00e2n tr\u1ecdng,</p>\n    <p>\u0110\u1ed9i ng\u0169 BookShop.</p>'
             };
             _context.next = 3;
             // return _mail2.default.send(msg);
@@ -52,7 +53,7 @@ var orderEmail = function () {
     }, _callee, undefined);
   }));
 
-  return function orderEmail(_x, _x2) {
+  return function orderEmail(_x, _x2, _x3) {
     return _ref.apply(this, arguments);
   };
 }();
