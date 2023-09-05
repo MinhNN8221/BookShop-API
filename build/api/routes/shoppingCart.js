@@ -20,6 +20,7 @@ var productRouter = (0, _express.Router)();
 
 productRouter.get('/generateUniqueId', _shoppingCartController2.default.generateUniqueId);
 productRouter.post('/add', _authenticate2.default, _shoppingCartController2.default.addProductToCart);
+productRouter.post('/add/wishlist', _authenticate2.default, _shoppingCartController2.default.addWishlistToCart);
 productRouter.get('/', _authenticate2.default, _shoppingCartController2.default.getProductsInCart);
 productRouter.delete('/empty', _authenticate2.default, _shoppingCartController2.default.emptyCart);
 productRouter.delete('/removeProduct/:item_id', _authenticate2.default, _shoppingCartController2.default.removeProduct);

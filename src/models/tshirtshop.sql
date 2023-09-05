@@ -1318,6 +1318,16 @@ BEGIN
   LIMIT      20;
 END$$
 
+CREATE PROCEDURE catalog_get_all_products_in_wishlist(IN inCustomerId INT)
+BEGIN
+  SELECT     p.product_id, p.name, p.description,
+               p.price, p.discounted_price, p.thumbnail
+    FROM       product p
+    INNER JOIN product_wishlist pw
+                 ON p.product_id = pw.product_id
+    WHERE      pw.customer_id = inCustomerId;
+END$$
+
 -- Create catalog_get_products_in_wishlist stored procedure
 CREATE PROCEDURE catalog_get_products_in_wishlist(
   IN inCustomerId INT, IN inShortProductDescriptionLength INT,

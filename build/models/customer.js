@@ -33,11 +33,7 @@ module.exports = function (sequelize, DataTypes) {
     mob_phone: DataTypes.STRING(100),
     gender: DataTypes.STRING(19),
     date_of_birth: DataTypes.DATEONLY,
-    // avatar: DataTypes.STRING(200)
-    avatar: {
-      type: DataTypes.STRING(200),
-      defaultValue: '', // Set your default avatar URL here
-    },
+    avatar: DataTypes.STRING(200)
   }, {
     timestamps: false,
     tableName: 'customer',

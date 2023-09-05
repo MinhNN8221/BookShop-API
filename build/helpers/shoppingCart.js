@@ -31,7 +31,8 @@ var getCart = function getCart(cartItems) {
       sub_total: subTotal,
       added_on: cartItem.dataValues.added_on,
       discounted_price: cartItem.dataValues.Product.discounted_price,
-      wishlist: cartItem.dataValues.wishlist
+      wishlist: cartItem.dataValues.wishlist,
+      image: cartItem.dataValues.image
     };
     cart.push(itemDetails);
   });
