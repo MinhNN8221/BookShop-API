@@ -16,17 +16,6 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 _mail2.default.setApiKey(process.env.SENDGRID_API_KEY);
 
-//nodemailer
-const nodemailer = require('nodemailer');
-const transporter = nodemailer.createTransport({
-  service: 'Gmail',
-  auth: {
-    user: 'bookshops.app@gmail.com', // Địa chỉ email của bạn
-    pass: 'aztcxqhqkuahsgrc' // Mật khẩu của bạn
-  }
-});
-//nodemailer
-
 var sendNewPassword = function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(email, newPass) {
     var msg;
@@ -36,13 +25,12 @@ var sendNewPassword = function () {
           case 0:
             msg = {
               to: '' + email,
-              from: 'bookshops.app@gmail.com',
-              subject: 'Mật khẩu mới trên hệ thống BookShop',
-              html: '<strong>Xin ch\u00e0o,</strong>\n    <p>Ch\u00fang t\u00f4i \u0111\u00e3 nh\u1eadn \u0111\u01b0\u1ee3c y\u00eau c\u1ea7u \u0111\u1eb7t l\u1ea1i m\u1eadt kh\u1ea9u BookShop c\u1ee7a b\u1ea1n.</p>\n    <p>M\u1EADt kh\u1EA9u m\u1EDBi c\u1EE7a b\u1EA1n l\xE0: <strong>' + newPass + '</strong></p>'
+              from: 'anhshop@yopmail.com',
+              subject: 'Mật khẩu mới trên hệ thống AnhShop',
+              html: '<p>M\u1EADt kh\u1EA9u m\u1EDBi c\u1EE7a b\u1EA1n l\xE0: ' + newPass + '</p>'
             };
             _context.next = 3;
-            // return _mail2.default.send(msg);
-            return transporter.sendMail(msg);
+            return _mail2.default.send(msg);
 
           case 3:
           case 'end':
