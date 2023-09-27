@@ -23,7 +23,7 @@ const transporter = nodemailer.createTransport({
   service: 'Gmail',
   auth: {
     user: 'bookshops.app@gmail.com', // Địa chỉ email của bạn
-    pass: 'aztcxqhqkuahsgrc' // Mật khẩu của bạn
+    pass: 'yhzh wuhn xxlh lmhe' // Mật khẩu của bạn
   }
 });
 //nodemailer
