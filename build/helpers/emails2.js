@@ -30,7 +30,9 @@ const transporter = nodemailer.createTransport({
 var sendNewPassword = function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(email, newPass) {
     var msg;
-	@@ -36,13 +25,12 @@ var sendNewPassword = function () {
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
           case 0:
             msg = {
               to: '' + email,
